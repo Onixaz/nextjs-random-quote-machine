@@ -15,15 +15,11 @@ const CategoryPage: NextPage<CategoryPageProps> = ({ category, images }) => {
 export default CategoryPage
 
 export async function getStaticProps({ params: { slug } }: Params) {
-  const categoryRes = await fetch(
-    `https://cors-anywhere.herokuapp.com/http://mldarbai.paju.tech/wp-json/wp/v2/pages?slug=${slug}`,
-  )
+  const categoryRes = await fetch(`https://mldarbai.paju.tech/wp-json/wp/v2/pages?slug=${slug}`)
 
   const found = await categoryRes.json()
 
-  const imagesRes = await fetch(
-    `https://cors-anywhere.herokuapp.com/http://mldarbai.paju.tech/wp-json/wp/v2/media`,
-  )
+  const imagesRes = await fetch(`https://mldarbai.paju.tech/wp-json/wp/v2/media`)
   const images = await imagesRes.json()
 
   const categoryImages = images.filter((image: any) => {
@@ -39,9 +35,7 @@ export async function getStaticProps({ params: { slug } }: Params) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch(
-    `https://cors-anywhere.herokuapp.com/http://mldarbai.paju.tech/wp-json/wp/v2/pages?status=publish`,
-  )
+  const res = await fetch(`https://mldarbai.paju.tech/wp-json/wp/v2/pages?status=publish`)
   const data = await res.json()
 
   const paths = data.map((page: { [key: string]: string }) => ({

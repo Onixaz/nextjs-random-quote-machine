@@ -13,9 +13,7 @@ const IndexPage: NextPage<IndexPageProps> = ({ media }) => {
 export default IndexPage
 
 export async function getStaticProps() {
-  const res = await fetch(
-    `https://cors-anywhere.herokuapp.com/http://mldarbai.paju.tech/wp-json/wp/v2/media`,
-  )
+  const res = await fetch(`https://mldarbai.paju.tech/wp-json/wp/v2/media`)
   const media = await res.json()
 
   return {
