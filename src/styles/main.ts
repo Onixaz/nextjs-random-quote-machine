@@ -17,12 +17,12 @@ const GlobalStyle = createGlobalStyle<Props>`
   }
 
   body{
-    background: ${({ theme }) => theme.lightWhiteBg};
+    background: ${({ theme }) => theme.lightWhite};
   }
   
   a {
     text-decoration: none;
-    color: ${({ theme }) => theme.primaryBlack}
+    
   }
   ul {
     list-style: none
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle<Props>`
   input:-webkit-autofill:focus, 
   input:-webkit-autofill:active  {
     box-shadow: inherit;
-    -webkit-box-shadow: 0 0 0 30px ${({ theme }) => theme.lightMediumBg} inset !important;
+    -webkit-box-shadow: 0 0 0 30px ${({ theme }) => theme.orange} inset !important;
 }
   
 `

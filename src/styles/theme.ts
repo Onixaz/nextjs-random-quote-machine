@@ -1,12 +1,11 @@
 const defaultTheme = {
-  lightMediumBg: '#f2f2f2',
-  lightWhiteBg: '#fff',
-  //text button colors
-  primaryBlack: '#0d0d0d',
-  secondaryBlack: '#898989',
-  primaryText: '#4c4e4e',
-  primaryWhite: '#fafafa',
-  primaryPurple: '#96588a',
+  mediumWhite: '#f2f2f2',
+  lightWhite: '#fff',
+  brown: '#3d2e21',
+  orange: '#f39f4b',
+  lightOrange: '#fbf8f5',
+  mediumOrange: '#ffb163',
+  lightGrey: '#edeceb',
 }
 
 export type ThemeType = typeof defaultTheme
