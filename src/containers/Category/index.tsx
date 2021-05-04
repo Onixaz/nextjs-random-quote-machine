@@ -14,11 +14,11 @@ const CategoryPageContainer: FC<CategoryPageContainerProps> = ({ images, categor
       <CategoryPageStyles.Wrapper>
         <CategoryPageStyles.Row imgStart={false}>
           <CategoryPageStyles.Column col="col1" width="500px">
-            <Carousel showThumbs={false} infiniteLoop={true} autoPlay={true} interval={3000}>
+            <Carousel showThumbs={true} infiniteLoop={true} autoPlay={true} interval={3000}>
               {images.map((image: any) => {
                 return (
                   <CategoryPageStyles.ImgWrapper key={image.id}>
-                    <CategoryPageStyles.Img src={image.media_details.sizes.full.source_url} />
+                    <img src={image.media_details.sizes.full.source_url} />
                   </CategoryPageStyles.ImgWrapper>
                 )
               })}

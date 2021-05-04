@@ -29,11 +29,14 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
   return (
     <NavbarStyles.Nav scrollNav={scrollNav}>
       <NavbarStyles.Container>
-        <NavbarStyles.LogoWrapper>
-          <Link href="/">
-            <NavbarStyles.LogoText>Logo.lt</NavbarStyles.LogoText>
-          </Link>
-        </NavbarStyles.LogoWrapper>
+        <Link href="/">
+          <NavbarStyles.LogoWrapper>
+            <NavbarStyles.LogoImg src="./LogoTop.svg" alt="Logo Top" />
+            <NavbarStyles.LogoText>
+              <NavbarStyles.LogoOrange>ML </NavbarStyles.LogoOrange>Darbai
+            </NavbarStyles.LogoText>
+          </NavbarStyles.LogoWrapper>
+        </Link>
         <NavbarStyles.MobileIcon onClick={toggle}>
           <FaBars />
         </NavbarStyles.MobileIcon>

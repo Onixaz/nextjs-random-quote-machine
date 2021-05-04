@@ -10,19 +10,40 @@ export const LinkText = styled.a`
 `
 
 export const LogoWrapper = styled.div`
-  display: flex;
-  justify-content: center;
+  //display: flex;
   align-items: center;
+  position: relative;
   padding: 1rem;
 `
 
 export const LogoText = styled.a`
   color: ${({ theme }) => theme.lightWhite};
+  font-size: calc(1.25rem + 0.1vw);
   cursor: pointer;
-  font-size: calc(1.8rem + 0.1vw);
-  letter-spacing: 2px;
-  opacity: 0.95;
-  font-weight: 400;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+
+  letter-spacing: 1px;
+
+  font-weight: 700;
+`
+
+export const LogoOrange = styled.span`
+  color: ${({ theme }) => theme.orange};
+  font-weight: 700;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 50%;
+  left: -30%;
+  transform: translate(-50%, -50%);
+`
+export const LogoImg = styled.img`
+  position: absolute;
+  top: 46%;
+  left: -160%;
+  transform: translate(-50%, -50%);
 `
 
 export const MobileIcon = styled.div`

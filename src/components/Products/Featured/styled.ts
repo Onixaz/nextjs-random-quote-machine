@@ -109,7 +109,7 @@ export const Btn = styled.button`
   font-weight: 600;
   letter-spacing: 1.1px;
   margin-top: 5rem;
-  padding: 0.5rem 4rem;
+  padding: 0.75rem 4rem;
   border: solid 1px #000;
   cursor: pointer;
   background: transparent;
@@ -117,7 +117,7 @@ export const Btn = styled.button`
 
   &:hover {
     //color: ${({ theme }) => theme.lightWhite};
-    background: ${({ theme }) => theme.orange};
-    //border: solid 1px ${({ theme }) => theme.lightWhite};
+    background: ${({ theme }) => theme.mediumOrange};
+    border: solid 1px ${({ theme }) => theme.mediumOrange};
   }
 `

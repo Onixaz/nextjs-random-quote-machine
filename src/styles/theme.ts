@@ -5,7 +5,7 @@ const defaultTheme = {
   orange: '#f39f4b',
   lightOrange: '#fbf8f5',
   mediumOrange: '#ffb163',
-  lightGrey: '#edeceb',
+  lightGrey: '#f7f7f7',
 }
 
 export type ThemeType = typeof defaultTheme
