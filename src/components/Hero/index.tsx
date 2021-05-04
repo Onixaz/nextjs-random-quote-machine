@@ -14,9 +14,6 @@ const Hero = () => {
           <HeroStyles.H1>Įvairūs rankų darbo gaminiai.</HeroStyles.H1>
 
           <HeroStyles.P>Pagal individualius užsakymus. Iš medienos, bei metalo. </HeroStyles.P>
-          {/* <HeroStyles.BtnWrapper>
-          <HeroStyles.Button>Mūsų darbai</HeroStyles.Button>
-        </HeroStyles.BtnWrapper> */}
 
           <HeroStyles.ScrollDownIconWrapper>
             <LinkS to="featured" smooth={true} duration={500}>

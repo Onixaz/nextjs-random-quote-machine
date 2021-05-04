@@ -4,7 +4,7 @@ export const Section = styled.section`
   padding: 5rem 1rem;
 `
 export const SectionTitle = styled.h1`
-  margin: calc(3rem + 0.5vw) 1rem;
+  margin: 3rem 1rem 1rem 1rem;
   opacity: 1;
   letter-spacing: 1px;
   font-weight: 600;

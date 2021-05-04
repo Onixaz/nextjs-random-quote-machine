@@ -14,7 +14,7 @@ const HomePageContainer: FC<HomePageContainerProps> = ({ media }) => {
       <HomePageStyles.Section id="featured">
         <HomePageStyles.SectionTitle>Naujausi gaminiai</HomePageStyles.SectionTitle>
         {media.slice(0, 3).map((image: any, index: number) => {
-          const link = image.caption.rendered.replace(/<[^>]+>\n*/g, '')
+          const link = `/${image.caption.rendered.replace(/<[^>]+>\n*/g, '')}`
 
           return (
             <FeaturedProduct
