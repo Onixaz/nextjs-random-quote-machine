@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import * as CategoryPageStyles from './styled'
 import { Carousel } from 'react-responsive-carousel'
 import ContactForm from '../../components/ContactForm'
+import useMediaQuery from '../../hooks/use-media-query'
 
 interface CategoryPageContainerProps {
   images: any
@@ -9,12 +10,19 @@ interface CategoryPageContainerProps {
 }
 
 const CategoryPageContainer: FC<CategoryPageContainerProps> = ({ images, category }) => {
+  const isBreakpoint = useMediaQuery(992)
+
   return (
     <CategoryPageStyles.Container>
       <CategoryPageStyles.Wrapper>
         <CategoryPageStyles.Row imgStart={false}>
           <CategoryPageStyles.Column col="col1" width="500px">
-            <Carousel showThumbs={true} infiniteLoop={true} autoPlay={true} interval={3000}>
+            <Carousel
+              showThumbs={isBreakpoint ? false : true}
+              infiniteLoop={true}
+              autoPlay={true}
+              interval={3000}
+            >
               {images.map((image: any) => {
                 return (
                   <CategoryPageStyles.ImgWrapper key={image.id}>

@@ -2,15 +2,15 @@ import styled from 'styled-components'
 
 export const LinkText = styled.a`
   cursor: pointer;
-  font-size: calc(1.1rem + 0.1vw);
+  font-size: 1.1rem;
   color: ${({ theme }) => theme.lightWhite};
   text-decoration: none;
   font-weight: 400;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 `
 
 export const LogoWrapper = styled.div`
-  //display: flex;
+  display: flex;
   align-items: center;
   position: relative;
   padding: 1rem;
@@ -18,12 +18,9 @@ export const LogoWrapper = styled.div`
 
 export const LogoText = styled.a`
   color: ${({ theme }) => theme.lightWhite};
-  font-size: calc(1.25rem + 0.1vw);
+  font-size: 1.25rem;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
+  margin-left: 3.5rem;
 
   letter-spacing: 1px;
 
@@ -34,24 +31,21 @@ export const LogoOrange = styled.span`
   color: ${({ theme }) => theme.orange};
   font-weight: 700;
   letter-spacing: 1px;
-  position: absolute;
-  top: 50%;
-  left: -30%;
-  transform: translate(-50%, -50%);
 `
 export const LogoImg = styled.img`
   position: absolute;
-  top: 46%;
-  left: -160%;
+  top: 45%;
+  left: 30%;
   transform: translate(-50%, -50%);
 `
 
 export const MobileIcon = styled.div`
   display: none;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 992px) {
+    color: ${({ theme }) => theme.lightWhite};
     display: block;
     position: absolute;
-    opacity: 0.8;
+
     top: 1.2rem;
     right: 1.2rem;
     font-size: 2rem; //transform: translate(-100%, 60%);
@@ -66,11 +60,8 @@ export const Menu = styled.ul`
   justify-content: space-evenly;
   align-items: center;
   list-style: none;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-  @media screen and (max-width: 768px) {
+
+  @media screen and (max-width: 992px) {
     display: none;
   }
 `
@@ -97,7 +88,7 @@ export const Container = styled.div`
   height: 80px;
   z-index: 1;
   width: 95%;
-  max-width: 1200px;
+  max-width: 1400px;
   position: relative;
 `
 export const Nav = styled.nav<{ scrollNav: boolean }>`

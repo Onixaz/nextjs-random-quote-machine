@@ -13,6 +13,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  //overflow: hidden;
 `
 
 export const Title = styled.h1`
@@ -50,19 +51,18 @@ export const Column = styled.div<{ col: string; width: string }>`
   grid-area: ${({ col }) => `${col}`};
 `
 
-export const Img = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`
 export const ImgWrapper = styled.div`
   height: 500px;
   width: 100%;
-  overflow: hidden;
+
+  @media screen and (max-width: 992px) {
+    height: auto;
+  }
 
   img {
-    width: 100%;
+    width: 50%;
     height: 100%;
+    max-width: 100%;
     object-fit: cover;
   }
 `
