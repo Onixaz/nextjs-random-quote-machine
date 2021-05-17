@@ -2,11 +2,11 @@ import styled from 'styled-components'
 
 export const Container = styled.section`
   min-height: 100vh;
-  margin-top: calc(7rem + 1vw);
+  margin-top: calc(10rem + 1vw);
 `
 
 export const Wrapper = styled.div`
-  max-width: 1000px;
+  max-width: 1200px;
 
   margin: 0 auto;
   display: flex;
@@ -17,8 +17,6 @@ export const Wrapper = styled.div`
 `
 
 export const Title = styled.h1`
-  //margin: calc(-0.2rem + 0.1vw) 1rem;
-  opacity: 1;
   padding: 0.5rem 0.75rem;
   letter-spacing: 1px;
   font-weight: 600;
@@ -43,33 +41,47 @@ export const Row = styled.div<{ imgStart: boolean }>`
 export const Column = styled.div<{ col: string; width: string }>`
   display: flex;
   padding: 1rem;
+  margin: 0 auto;
   flex-direction: column;
 
-  margin: 0 auto;
-  min-height: calc(45vh + 5vw);
+  min-height: calc(40vh + 5vw);
   max-width: ${({ width }) => `${width}`};
   grid-area: ${({ col }) => `${col}`};
+
+  @media screen and (max-width: 992px) {
+    max-width: 500px;
+  }
 `
 
 export const ImgWrapper = styled.div`
-  height: 500px;
+  //height: 520px;
   width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
 
   @media screen and (max-width: 992px) {
     height: auto;
   }
 
   img {
-    width: 50%;
-    height: 100%;
+    height: 520px;
     max-width: 100%;
     object-fit: cover;
+
+    //padding: 0 1.6rem;
+  }
+`
+
+export const TextWrapper = styled.div`
+  margin-top: -1rem;
+  @media screen and (max-width: 992px) {
+    margin-top: 1rem;
   }
 `
 
 export const InnerHtml = styled.div`
-  margin-top: calc(-2rem + 0.1vw);
-  padding: 0.5rem 0.75rem;
+  margin-top: calc(-2.5rem + 0.1vw);
+  padding: 0.75rem 0.75rem;
   h2,
   h3,
   h4 {
@@ -86,7 +98,7 @@ export const InnerHtml = styled.div`
 `
 
 export const Text = styled.p`
-  padding: 0.5rem 0.75rem;
+  padding: 0rem 0.75rem;
   font-size: clamp(0.95rem, 0.2vw + 0.95rem, 1rem);
   font-weight: 400;
   letter-spacing: 1px;
@@ -99,17 +111,22 @@ export const TextSpan = styled.a`
 `
 
 export const FormWrapper = styled.div`
-  max-width: 1000px;
+  max-width: 1200px;
   padding: 1rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  margin: calc(2rem + 0.5vw) auto calc(1rem + 0.5vw) auto;
+  margin: calc(2rem + 0.1vw) auto calc(1rem + 0.5vw) auto;
+
+  @media screen and (max-width: 992px) {
+    max-width: 500px;
+  }
 `
 
 export const FormTitle = styled.h2`
   //margin: calc(-0.2rem + 0.1vw) 1rem;
   opacity: 1;
+  white-space: nowrap;
   padding: 0.5rem 0.75rem;
   letter-spacing: 1px;
   font-weight: 600;
@@ -118,6 +135,6 @@ export const FormTitle = styled.h2`
 export const Line = styled.div`
   width: 95%;
 
-  height: calc(30px + 3vw);
+  height: calc(30px + 1vw);
   border-bottom: 1px solid ${({ theme }) => theme.lightGrey};
 `

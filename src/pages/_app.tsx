@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app'
 import theme from '../styles/theme'
 import { ThemeProvider } from 'styled-components'
-
+import { SWRConfig } from 'swr'
 import GlobalStyle from '../styles/main'
 import Layout from '../layout'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
@@ -16,9 +16,11 @@ const CustomApp: React.FC<CustomAppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <SWRConfig value={{ fetcher: (url: string) => fetch(url).then((r) => r.json()) }}>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </SWRConfig>
         <GlobalStyle />
       </ThemeProvider>
     </>

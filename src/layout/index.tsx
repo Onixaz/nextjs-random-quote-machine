@@ -33,6 +33,12 @@ const Layout: FC<LayoutProps> = ({ children }) => {
         <meta property="og:site_name" content={baseInfo.name} />
         <meta name="author" content={baseInfo.author} />
         <meta name="keywords" content={baseInfo.keywords} />
+        <link
+          rel="prefetch"
+          href="https://mldarbai.paju.tech/wp-json/wp/v2/pages"
+          as="fetch"
+          crossOrigin="anonymous"
+        ></link>
       </Head>
       <LayoutStyles.Layout>
         <Sidebar isOpen={isOpen} toggle={toggle} />

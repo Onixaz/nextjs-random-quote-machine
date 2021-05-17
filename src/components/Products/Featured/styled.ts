@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
   align-items: center;
   width: 100%;
   height: 100%;
-
+  margin: 3rem auto;
   max-width: 1200px;
   margin-right: auto;
   margin-left: auto;
@@ -44,15 +44,16 @@ export const Column1 = styled.div`
   align-items: center;
   background: ${({ theme }) => theme.lightGrey};
   position: relative;
-  height: calc(45vh + 5vw);
+  height: calc(60vh + 2vw);
   max-width: 600px;
+  position: relative;
   grid-area: col1;
 `
 
 export const Column2 = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(45vh + 5vw);
+  height: calc(60vh + 2vw);
   align-items: center;
   max-width: 600px;
 
@@ -105,6 +106,10 @@ export const ImgWrapper = styled.div`
   overflow: hidden;
 `
 export const Btn = styled.button`
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-size: clamp(0.8rem, 0.5vw + 1rem, 1.2rem);
   font-weight: 600;
   letter-spacing: 1.1px;

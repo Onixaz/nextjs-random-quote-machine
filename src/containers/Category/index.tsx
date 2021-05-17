@@ -16,12 +16,14 @@ const CategoryPageContainer: FC<CategoryPageContainerProps> = ({ images, categor
     <CategoryPageStyles.Container>
       <CategoryPageStyles.Wrapper>
         <CategoryPageStyles.Row imgStart={false}>
-          <CategoryPageStyles.Column col="col1" width="500px">
+          <CategoryPageStyles.Column col="col1" width="640px">
             <Carousel
               showThumbs={isBreakpoint ? false : true}
               infiniteLoop={true}
               autoPlay={true}
               interval={3000}
+              thumbWidth={75}
+              showStatus={false}
             >
               {images.map((image: any) => {
                 return (
@@ -32,17 +34,20 @@ const CategoryPageContainer: FC<CategoryPageContainerProps> = ({ images, categor
               })}
             </Carousel>
           </CategoryPageStyles.Column>
-          <CategoryPageStyles.Column col="col2" width="500px">
-            <CategoryPageStyles.Title>{category.title.rendered}</CategoryPageStyles.Title>
-            <CategoryPageStyles.InnerHtml
-              dangerouslySetInnerHTML={{
-                __html: category.content.rendered.replace(/(\n)+/g, '<br />'),
-              }}
-            />
-            <CategoryPageStyles.Text>
-              Turite klausimų?{' '}
-              <CategoryPageStyles.TextSpan>Susisiekite!</CategoryPageStyles.TextSpan>
-            </CategoryPageStyles.Text>
+          <CategoryPageStyles.Column col="col2" width="560px">
+            <CategoryPageStyles.TextWrapper>
+              <CategoryPageStyles.Title>{category.title.rendered}</CategoryPageStyles.Title>
+              <CategoryPageStyles.InnerHtml
+                dangerouslySetInnerHTML={{
+                  __html: category.content.rendered.replace(/(\n)+/g, '<br />'),
+                }}
+              />
+
+              <CategoryPageStyles.Text>
+                Turite klausimų?{' '}
+                <CategoryPageStyles.TextSpan>Susisiekite!</CategoryPageStyles.TextSpan>
+              </CategoryPageStyles.Text>
+            </CategoryPageStyles.TextWrapper>
           </CategoryPageStyles.Column>
         </CategoryPageStyles.Row>
         <CategoryPageStyles.Line />

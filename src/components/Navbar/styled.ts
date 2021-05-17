@@ -39,6 +39,47 @@ export const LogoImg = styled.img`
   transform: translate(-50%, -50%);
 `
 
+export const CategoryList = styled.ul<{ show: boolean }>`
+  visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
+  transition: all 0.2s ease-in;
+  position: absolute;
+  opacity: ${({ show }) => (show ? '1' : '0')};
+  background: ${({ theme }) => theme.lightWhite};
+  width: 200px;
+  min-height: 150px;
+  top: 200%;
+  left: 150%;
+  border-radius: 5px;
+  transform: translate(-50%, -50%);
+
+  :after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    z-index: -1;
+    left: 5px;
+    bottom: 130px;
+    border-left: 25px solid transparent;
+    border-bottom: 25px solid ${({ theme }) => theme.lightWhite};
+    transform: rotate(225deg);
+  }
+`
+
+export const CategoryListText = styled.li`
+  cursor: pointer;
+  font-size: 1.1rem;
+  padding: 0.75rem 0.5rem;
+  color: #000;
+  text-decoration: none;
+  font-weight: 400;
+  letter-spacing: 1px;
+
+  &:hover {
+    background: ${({ theme }) => theme.lightGrey};
+  }
+`
+
 export const MobileIcon = styled.div`
   display: none;
   @media screen and (max-width: 992px) {
@@ -70,7 +111,7 @@ export const Item = styled.li`
   height: 80px;
   display: flex;
   align-items: center;
-  //padding: 0 0.8rem;
+  position: relative;
   margin: 0 0.8rem;
 `
 

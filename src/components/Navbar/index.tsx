@@ -3,6 +3,7 @@ import * as NavbarStyles from './styled'
 import { FaBars } from 'react-icons/fa'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import useSWR from 'swr'
 
 interface NavbarProps {
   toggle: () => void
@@ -10,6 +11,9 @@ interface NavbarProps {
 
 const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(true)
+  const [categoriesOpen, setCategoriesOpen] = useState(false)
+  const { data } = useSWR('http://mldarbai.paju.tech/wp-json/wp/v2/pages')
+
   const router = useRouter()
 
   const changeNav = () => {
@@ -25,6 +29,11 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
     window.addEventListener('scroll', changeNav)
     return () => window.removeEventListener('scroll', changeNav)
   }, [scrollNav, router])
+
+  if (!data) {
+    return null
+  }
+  console.log(data)
 
   return (
     <NavbarStyles.Nav scrollNav={scrollNav}>
@@ -46,10 +55,22 @@ const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
               <NavbarStyles.LinkText>Pradžia</NavbarStyles.LinkText>
             </Link>
           </NavbarStyles.Item>
-          <NavbarStyles.Item>
-            <Link href="/shop">
-              <NavbarStyles.LinkText>Gaminiai</NavbarStyles.LinkText>
-            </Link>
+          <NavbarStyles.Item
+            onMouseEnter={() => setCategoriesOpen(true)}
+            onMouseLeave={() => setCategoriesOpen(false)}
+          >
+            <NavbarStyles.LinkText>Gaminiai</NavbarStyles.LinkText>
+            <NavbarStyles.CategoryList show={categoriesOpen ? true : false}>
+              {data.map((category: any) => {
+                return (
+                  <Link href={category.slug} key={category.id}>
+                    <NavbarStyles.CategoryListText>
+                      {category.title.rendered}
+                    </NavbarStyles.CategoryListText>
+                  </Link>
+                )
+              })}
+            </NavbarStyles.CategoryList>
           </NavbarStyles.Item>
           <NavbarStyles.Item>
             <Link href="/about">
