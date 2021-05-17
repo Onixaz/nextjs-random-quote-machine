@@ -12,7 +12,7 @@ interface NavbarProps {
 const Navbar: React.FC<NavbarProps> = ({ toggle }) => {
   const [scrollNav, setScrollNav] = useState(true)
   const [categoriesOpen, setCategoriesOpen] = useState(false)
-  const { data } = useSWR('http://mldarbai.paju.tech/wp-json/wp/v2/pages')
+  const { data } = useSWR('https://mldarbai.paju.tech/wp-json/wp/v2/pages')
 
   const router = useRouter()
 
