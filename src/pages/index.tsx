@@ -18,5 +18,6 @@ export async function getStaticProps() {
 
   return {
     props: { media },
+    revalidate: 60,
   }
 }

@@ -31,6 +31,7 @@ export async function getStaticProps({ params: { slug } }: Params) {
       category: found[0],
       images: categoryImages,
     },
+    revalidate: 60,
   }
 }
 
