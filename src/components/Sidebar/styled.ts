@@ -19,20 +19,21 @@ export const Sidebar = styled.aside<{ isOpen: boolean }>`
 
 export const ClosedIcon = styled(FaTimes)`
   color: #ffffff;
+  transform: scale(1.1);
 `
 
 export const Icon = styled.div`
   position: absolute;
-  top: 1rem;
-  right: 2rem;
-  background: transparent;
-  font-size: 2.3rem;
+  padding-top: 10px;
+  top: 50%;
+  right: 2%;
+  font-size: 2rem;
+  transform: translate(-50%, -50%);
   cursor: pointer;
-  outline: none;
 `
 
 export const Wrapper = styled.div`
-  margin-top: 3rem;
+  margin-top: -80px;
   color: #fff;
   position: relative;
 `
@@ -90,17 +91,16 @@ export const LinkText = styled.a`
   color: #fff;
   cursor: pointer;
   &:hover {
-    color: ${({ theme }) => theme.primaryPurple};
+    color: red;
     transition: 0.2s ease-in-out;
   }
 `
 export const IconHolder = styled.div`
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  top: 15%;
-  left: 50%;
-  border-bottom: 1px solid #fff;
-  transform: translate(-50%, -50%);
+  //display: flex;
+  //margin-top: -80px;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  margin: auto;
+  position: fixed;
 `

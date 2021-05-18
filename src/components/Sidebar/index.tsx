@@ -11,9 +11,12 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ toggle, isOpen }) => {
   return (
     <SidebarStyles.Sidebar isOpen={isOpen} onClick={toggle}>
-      <SidebarStyles.Icon onClick={toggle}>
-        <SidebarStyles.ClosedIcon />
-      </SidebarStyles.Icon>
+      <SidebarStyles.IconHolder>
+        <SidebarStyles.Icon onClick={toggle}>
+          <SidebarStyles.ClosedIcon />
+        </SidebarStyles.Icon>
+      </SidebarStyles.IconHolder>
+
       <SidebarStyles.Wrapper>
         <SidebarStyles.Menu>
           <SidebarStyles.LinkWrapper onClick={toggle}>
@@ -21,18 +24,14 @@ const Sidebar: React.FC<SidebarProps> = ({ toggle, isOpen }) => {
               <SidebarStyles.LinkText>Home</SidebarStyles.LinkText>
             </Link>
           </SidebarStyles.LinkWrapper>
+
           <SidebarStyles.LinkWrapper>
-            <Link href="/shop">
-              <SidebarStyles.LinkText>Shop</SidebarStyles.LinkText>
-            </Link>
-          </SidebarStyles.LinkWrapper>
-          <SidebarStyles.LinkWrapper>
-            <Link href="/about">
+            <Link href="/">
               <SidebarStyles.LinkText>About</SidebarStyles.LinkText>
             </Link>
           </SidebarStyles.LinkWrapper>
           <SidebarStyles.LinkWrapper>
-            <Link href="/contact">
+            <Link href="/">
               <SidebarStyles.LinkText>Contact</SidebarStyles.LinkText>
             </Link>
           </SidebarStyles.LinkWrapper>

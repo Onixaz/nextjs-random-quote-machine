@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle<Props>`
   input:-webkit-autofill:focus, 
   input:-webkit-autofill:active  {
     box-shadow: inherit;
-    -webkit-box-shadow: 0 0 0 30px ${({ theme }) => theme.lightOrange} inset !important;
+    -webkit-box-shadow: 0 0 0 30px ${({ theme }) => theme.lightWhite} inset !important;
 }
   
 `

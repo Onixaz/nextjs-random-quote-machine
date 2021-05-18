@@ -1,23 +1,26 @@
 import { NextPage } from 'next'
 import React from 'react'
-import HomePageContainer from '../containers/Home'
 
 interface IndexPageProps {
-  media: any
+  data: any
 }
 
-const IndexPage: NextPage<IndexPageProps> = ({ media }) => {
-  return <HomePageContainer media={media} />
+const IndexPage: NextPage<IndexPageProps> = ({ data }) => {
+  return (
+    <h1 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' }}>
+      Starter
+    </h1>
+  )
 }
 
 export default IndexPage
 
 export async function getStaticProps() {
-  const res = await fetch(`https://mldarbai.paju.tech/wp-json/wp/v2/media`)
-  const media = await res.json()
+  const res = await fetch(`https://api.github.com/users/Onixaz/repos`)
+  const data = await res.json()
 
   return {
-    props: { media },
+    props: { data },
     revalidate: 60,
   }
 }

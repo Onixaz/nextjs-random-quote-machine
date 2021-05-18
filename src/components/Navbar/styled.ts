@@ -1,12 +1,17 @@
 import styled from 'styled-components'
 
 export const LinkText = styled.a`
-  cursor: pointer;
-  font-size: 1.1rem;
-  color: ${({ theme }) => theme.lightWhite};
+  font-size: 1.5rem;
+  letter-spacing: 1.1px;
   text-decoration: none;
-  font-weight: 400;
-  letter-spacing: 1px;
+  list-style: none;
+  transition: 0.2s ease-in-out;
+  color: #000;
+  cursor: pointer;
+  &:hover {
+    color: red;
+    transition: 0.2s ease-in-out;
+  }
 `
 
 export const LogoWrapper = styled.div`
@@ -14,24 +19,18 @@ export const LogoWrapper = styled.div`
   align-items: center;
   position: relative;
   padding: 1rem;
+  margin-left: 1rem;
 `
 
 export const LogoText = styled.a`
-  color: ${({ theme }) => theme.lightWhite};
-  font-size: 1.25rem;
   cursor: pointer;
-  margin-left: 3.5rem;
-
-  letter-spacing: 1px;
-
-  font-weight: 700;
-`
-
-export const LogoOrange = styled.span`
-  color: ${({ theme }) => theme.orange};
-  font-weight: 700;
+  font-size: 2rem;
+  color: #000;
+  text-decoration: none;
+  font-weight: 600;
   letter-spacing: 1px;
 `
+
 export const LogoImg = styled.img`
   position: absolute;
   top: 45%;
@@ -83,13 +82,14 @@ export const CategoryListText = styled.li`
 export const MobileIcon = styled.div`
   display: none;
   @media screen and (max-width: 992px) {
-    color: ${({ theme }) => theme.lightWhite};
+    color: #000;
     display: block;
     position: absolute;
-
-    top: 1.2rem;
-    right: 1.2rem;
-    font-size: 2rem; //transform: translate(-100%, 60%);
+    padding-top: 10px;
+    top: 50%;
+    right: 2%;
+    font-size: 2rem;
+    transform: translate(-50%, -50%);
     cursor: pointer;
   }
 `
@@ -128,7 +128,7 @@ export const Container = styled.div`
   justify-content: space-between;
   height: 80px;
   z-index: 1;
-  width: 95%;
+  width: 100%;
   max-width: 1400px;
   position: relative;
 `
