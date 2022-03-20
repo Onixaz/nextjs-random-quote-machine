@@ -1,31 +1,27 @@
 import { NextPage } from 'next'
-import React from 'react'
+import React, { useState } from 'react'
 import * as Styled from '../styles/styled-components'
-import ReactFCCtest from 'react-fcctest'
 import useSWR, { mutate } from 'swr'
 import Skeleton from 'react-loading-skeleton'
-
-//https://freequote.herokuapp.com/
 
 interface IndexPageProps {}
 
 const IndexPage: NextPage<IndexPageProps> = () => {
-  const { data, mutate } = useSWR('https://freequote.herokuapp.com/', { revalidateOnFocus: false })
-
+  const { data } = useSWR('https://type.fit/api/quotes', { revalidateOnFocus: false })
+  const [ quoteId, setQuoteId ] = useState(Math.floor(Math.random() * 1000))
   return (
     <>
-      <ReactFCCtest />
       <Styled.Container>
         <Styled.Wrapper>
           <Styled.Box id="quote-box">
             <Styled.TextWrapper>
-              <Styled.Quote id="text">{!data ? <Skeleton count={3} /> : data.quote}</Styled.Quote>
+              <Styled.Quote id="text">{!data ? <Skeleton count={3} /> : data[quoteId].text}</Styled.Quote>
 
               <Styled.Author id="author">
                 {!data ? (
                   <Skeleton width={100} count={1} />
                 ) : (
-                  `- ${data.author ? data.author : 'Unknown author'}`
+                  `- ${data[quoteId].author ? data[quoteId].author : 'Unknown author'}`
                 )}
               </Styled.Author>
             </Styled.TextWrapper>
@@ -37,12 +33,12 @@ const IndexPage: NextPage<IndexPageProps> = () => {
                 <Styled.Tweet
                   id="tweet-quote"
                   href={`https://twitter.com/intent/tweet?related=freecodecamp&text="${
-                    data.quote
-                  }"+-+${data.author ? data.author : 'Unknown author'}`}
+                    data[quoteId].text
+                  }"+-+${data[quoteId].author ? data[quoteId].author : 'Unknown author'}`}
                 >
                   Tweet this quote!
                 </Styled.Tweet>
-                <Styled.Button id="new-quote" onClick={() => mutate()}>
+                <Styled.Button id="new-quote" onClick={() => setQuoteId(Math.floor(Math.random() * 1000))}>
                   New quote!
                 </Styled.Button>
               </Styled.ButtonsWrapper>
